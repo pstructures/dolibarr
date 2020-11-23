@@ -7,11 +7,13 @@ if (!defined('ISLOADEDBYSTEELSHEET')) die('Must be call by steelsheet'); ?>
             --btncolorbg: #fbfbfb;
             --btncolorborderhover: none;
             --btncolorborder: #FFF;
+            /* --butactionbg:rgba(150, 110, 162, 0.95); */
+            --butactionbg:rgb(118, 145, 225);
+            --butactionbg:rgba(150, 110, 162, 0.95);
             --butactiondeletebg: rgb(234,228,225);
             /* tertiary color */
             /* --butactionbg:rgb(218, 235, 225); */
             /* --butactionbg:rgb(228, 218, 235); */
-            --butactionbg:rgb(118, 145, 225);
 }
 
 <?php
@@ -27,7 +29,7 @@ if (!empty($conf->global->THEME_DARKMODEENABLED)) {
             --btncolorbg: rgb(26,27,27);
             --btncolorborderhover: #ffffff;
             --btncolorborder: #2b2c2e;
-            --butactionbg:rgb(173,140,79);
+            --butactionbg: rgb(173,140,79);
             --butactiondeletebg: rgb(252,84,91);
 
       }\n";
@@ -70,7 +72,6 @@ span.butAction, span.butActionDelete {
 
     margin: 0em <?php echo ($dol_optimize_smallscreen ? '0.6' : '0.9'); ?>em;
     padding: 0.6em <?php echo ($dol_optimize_smallscreen ? '0.6' : '0.7'); ?>em;
-    font-family: <?php print $fontlist ?>;
     display: inline-block;
     text-align: center;
     cursor: pointer;
@@ -112,18 +113,6 @@ span.butActionNewRefused>span.fa-list-alt, span.butActionNewRefused>span.fa-list
 	padding-left: 0px;
 }
 
-/*a.butActionNew>span.fa-plus-circle, a.butActionNew>span.fa-plus-circle:hover,
-span.butActionNew>span.fa-plus-circle, span.butActionNew>span.fa-plus-circle:hover,
-a.butActionNewRefused>span.fa-plus-circle, a.butActionNewRefused>span.fa-plus-circle:hover,
-span.butActionNewRefused>span.fa-plus-circle, span.butActionNewRefused>span.fa-plus-circle:hover,
-a.butActionNew>span.fa-list-alt, a.butActionNew>span.fa-list-alt:hover,
-span.butActionNew>span.fa-list-alt, span.butActionNew>span.fa-list-alt:hover,
-a.butActionNewRefused>span.fa-list-alt, a.butActionNewRefused>span.fa-list-alt:hover,
-span.butActionNewRefused>span.fa-list-alt, span.butActionNewRefused>span.fa-list-alt:hover,
-a.butActionNew>span.fa-comment-dots, a.butActionNew>span.fa-comment-dots:hover,
-span.butActionNew>span.fa-comment-dots, span.butActionNew>span.fa-comment-dots:hover,
-a.butActionNewRefused>span.fa-comment-dots, a.butActionNewRefused>span.fa-comment-dots:hover,
-span.butActionNewRefused>span.fa-comment-dots, span.butActionNewRefused>span.fa-comment-dots:hover,*/
 a.butActionNew>span.fa, a.butActionNew>span.fa:hover,
 span.butActionNew>span.fa, span.butActionNew>span.fa:hover,
 a.butActionNewRefused>span.fa, a.butActionNewRefused>span.fa:hover,
@@ -289,6 +278,9 @@ div.pagination li:first-child a.btnTitle{
 /* rule to reduce top menu - 2nd reduction: Reduce width of top menu icons again */
 @media only screen and (max-width: <?php echo empty($conf->global->THEME_ELDY_WITDHOFFSET_FOR_REDUC2) ? round($nbtopmenuentries * 69, 0) + 130 : $conf->global->THEME_ELDY_WITDHOFFSET_FOR_REDUC2; ?>px)	/* reduction 2 */
 {
+	.butAction, .butActionRefused, .butActionDelete {
+		font-size: 0.95em;
+	}
 	.btnTitle, a.btnTitle {
 	    display: inline-block;
 	    padding: 4px 4px 4px 4px;
